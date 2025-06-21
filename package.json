@@ -1,0 +1,17 @@
+{
+    "name": "knowledge-cache-api",
+    "version": "1.0.0",
+    "description": "Knowledge Base Cache API for LINE Bot with Redis",
+    "main": "api/knowledge-cache.js",
+    "scripts": {
+      "dev": "vercel dev",
+      "build": "mkdir -p public && echo '{}' > public/index.json"
+    },
+    "dependencies": {},
+    "engines": {
+      "node": ">=18.0.0"
+    },
+    "keywords": ["knowledge", "cache", "redis", "linebot", "n8n", "api"],
+    "author": "Ypp",
+    "license": "MIT"
+  }

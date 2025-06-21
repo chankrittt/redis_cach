@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowledge Cache API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+        }
+        h1 { 
+            color: #fff;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            opacity: 0.8;
+            margin-bottom: 30px;
+        }
+        .endpoint {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-left: 4px solid #00ff88;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        code {
+            background: rgba(0,0,0,0.3);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+        .stats-btn {
+            display: inline-block;
+            background: #00ff88;
+            color: #333;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 25px;
+            margin: 10px 5px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .stats-btn:hover {
+            background: #00cc6a;
+            transform: translateY(-2px);
+        }
+        pre {
+            background: rgba(0,0,0,0.3);
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 14px;
+        }
+        .feature {
+            background: rgba(255,255,255,0.05);
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 3px solid #00ff88;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧠 Knowledge Cache API</h1>
+        <p class="subtitle">Redis-powered caching for LINE Bot knowledge base</p>
+        
+        <div class="feature">
+            <h3>🚀 Features</h3>
+            <ul>
+                <li>Smart question-answer caching</li>
+                <li>Similar question detection</li>
+                <li>Performance analytics</li>
+                <li>Thai language optimized</li>
+            </ul>
+        </div>
+        
+        <h2>📡 API Endpoints</h2>
+        
+        <div class="endpoint">
+            <strong>Check Cache</strong><br>
+            <code>POST /api/knowledge-cache</code><br>
+            Body: <code>{"action": "check", "messageText": "ระบบ e-GP คืออะไร"}</code>
+        </div>
+        
+        <div class="endpoint">
+            <strong>Store Answer</strong><br>
+            <code>POST /api/knowledge-cache</code><br>
+            Body: <code>{"action": "store", "messageText": "...", "response": "..."}</code>
+        </div>
+        
+        <div class="endpoint">
+            <strong>Get Statistics</strong><br>
+            <code>GET /api/knowledge-cache?action=stats</code>
+        </div>
+        
+        <div style="text-align: center; margin: 30px 0;">
+            <a href="/api/knowledge-cache?action=stats" class="stats-btn">📊 View Cache Stats</a>
+            <a href="https://github.com/your-username/knowledge-cache-api" class="stats-btn">📚 Documentation</a>
+        </div>
+        
+        <h2>📋 Example Response</h2>
+        <pre><code>{
+  "hit": true,
+  "type": "exact",
+  "data": {
+    "question": "ระบบ e-GP คืออะไร",
+    "response": "ระบบ e-GP คือระบบจัดซื้อจัดจ้างภาครัฐแบบอิเล็กทรอนิกส์",
+    "created_at": "2024-01-15T10:30:00.000Z"
+  },
+  "cache_key": "e_gp_ระบบ",
+  "source": "redis_exact_match"
+}</code></pre>
+        
+        <div class="feature">
+            <h3>⚡ Performance Benefits</h3>
+            <ul>
+                <li><strong>80% faster:</strong> 0.5s vs 3-5s response time</li>
+                <li><strong>Smart matching:</strong> Answers similar questions</li>
+                <li><strong>Cost effective:</strong> Reduces Vector Store queries</li>
+                <li><strong>Learning system:</strong> Improves over time</li>
+            </ul>
+        </div>
+        
+        <p style="text-align: center; margin-top: 40px; opacity: 0.7;">
+            <small>Powered by Redis & Vercel | Built for n8n LINE Bot Integration</small>
+        </p>
+    </div>
+</body>
+</html>
